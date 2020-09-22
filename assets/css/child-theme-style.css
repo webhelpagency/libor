@@ -1,0 +1,58 @@
+/*custom styles for child theme*/
+.services-v2{
+    display: flex;
+    flex-wrap: wrap;
+}
+.fa-angle-right::before {
+    content: "\f105";
+}
+h4.mt-title{
+    font-size:16px;
+}
+.mt-icon-box-wraper, .mt-icon-box-wraper .p-a30{
+    height:100%;
+}
+.services-button-link{
+    position: absolute;
+    bottom: 0;
+}
+.services-v2 .mt-icon-box-wraper .p-a30 {
+    padding: 40px 30px;
+}
+div.image-effect-one{
+    background:#fff;
+    border: 1px solid #f2f2f2;
+}
+div.image-effect-one:hover img{
+    filter: alpha(opacity=60);
+    -webkit-opacity: 0.6;
+    opacity: 0.6;
+}
+div.image-effect-one .figcaption{
+    background-color: #000000bd;
+}
+div.image-effect-one .figcaption h4{
+    color:#fff;
+}
+.list-none{
+    list-style: none;
+}
+.footer-bottom{
+    padding: 20px 0;
+    background: #d0d0d0;
+}
+.home-client-carousel-2 .owl-stage{
+    display: flex;
+}
+.home-client-carousel-2 .owl-item{
+    margin-top:auto;
+    margin-bottom:auto;
+}
+@media only screen and (max-width: 991px) {
+    #navbarNavDropdown {
+        display: block !important;
+        background: #fff;
+        padding: 0;
+    }
+    
+}
