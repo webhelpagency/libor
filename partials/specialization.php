@@ -20,13 +20,17 @@ if( !empty($block['className']) ) {
 }
 if( !empty($block['align']) ) {
     $className .= ' align' . $block['align'];
-}
-
-// Load values and assign defaults.
-
-?>
+}?>
 <!-- OUR SPECIALIZATION START -->
-<div class="section-full bg-white slider-half-part">
+<?php
+//checking page type
+if( is_front_page() ){
+    echo '<div class="section-full bg-white slider-half-part">';
+}
+else { ?>
+    <div class="section-full p-tb80 bg-white bg-repeat square_shape2 inner-page-padding" style="background-image:url(<?php echo get_field("specialization_bg") ;?>)">';
+<?php }
+?>
     <div class="container">
         <!-- IMAGE CAROUSEL START -->
         <div class="section-content">

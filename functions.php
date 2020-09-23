@@ -68,3 +68,81 @@ add_action( 'after_setup_theme', 'theme_register_footer_menu' );
 function theme_register_footer_menu() {
     register_nav_menu( 'footer-menu', 'Footer menu' );
 }
+
+
+
+function the_breadcrumb(){
+
+    // получаем номер текущей страницы
+    $pageNum = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
+
+    $separator = ' &raquo; '; //  »
+
+    // если главная страница сайта
+    if( is_front_page() ){
+
+        if( $pageNum > 1 ) {
+            echo '<li><a href="' . site_url() . '">Головна</a></li>' . $separator . $pageNum . '-а сторінка';
+        } else {
+            echo 'Головна сторінка';
+        }
+
+    } else { // не главная
+
+        echo '<li><a href="' . site_url() . '">Головна</a></li>' . $separator;
+        if( is_single() ){ // записи
+
+            the_category(', '); echo $separator; the_title();
+
+        } elseif ( is_page() ){ // страницы WordPress
+
+            the_title();
+
+        } elseif ( is_category() ) {
+
+            single_cat_title();
+
+        } elseif( is_tag() ) {
+
+            single_tag_title();
+
+        } elseif ( is_day() ) { // архивы (по дням)
+
+            echo '<li><a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a></li>' . $separator;
+            echo '<li><a href="' . get_month_link(get_the_time('Y'),get_the_time('m')) . '">' . get_the_time('F') . '</a></li>' . $separator;
+            echo get_the_time('d');
+
+        } elseif ( is_month() ) { // архивы (по месяцам)
+
+            echo '<li><a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a></li>' . $separator;
+            echo get_the_time('F');
+
+        } elseif ( is_year() ) { // архивы (по годам)
+
+            echo get_the_time('Y');
+
+        } elseif ( is_author() ) { // архивы по авторам
+
+            global $author;
+            $userdata = get_userdata($author);
+            echo 'Опубліковано ' . $userdata->display_name;
+
+        } elseif ( is_404() ) { // если страницы не существует
+
+            echo 'Помилка 404';
+
+        }
+        if ( $pageNum > 1 ) { // номер текущей страницы
+            echo ' (' . $pageNum . '-а сторінка)';
+        }
+//        if( is_tax( $taxonomy_name ) ) {
+//            single_term_title();
+//        }
+//
+//        if( is_singular( $post_type_name ) ) {
+//            the_title();
+//        }
+    }
+
+}
+

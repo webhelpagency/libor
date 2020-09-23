@@ -48,11 +48,16 @@ div.image-effect-one .figcaption h4{
     margin-top:auto;
     margin-bottom:auto;
 }
+.banner-title-name h1{
+    color:#d7d7d7;
+}
 @media only screen and (max-width: 991px) {
     #navbarNavDropdown {
         display: block !important;
         background: #fff;
         padding: 0;
     }
-    
+}
+.mt-breadcrumb{
+    color:#fff;
 }

@@ -87,6 +87,46 @@ function my_acf_init_block_types() {
             'icon'              => 'admin-comments',
             'keywords'          => array( 'testimonials', 'custom-block' ),
         ));
+           // register slider-about block.
+        acf_register_block_type(array(
+            'name'              => 'slider-about',
+            'title'             => __('Slider-about'),
+            'description'       => __('Slider-about block.'),
+            'render_template'   => '/partials/slider-about.php',
+            'category'          => 'formatting',
+            'icon'              => 'admin-comments',
+            'keywords'          => array( 'about-page-slider', 'custom-block' ),
+        ));
+ // register inner-page-banner block.
+        acf_register_block_type(array(
+            'name'              => 'inner-page-banner',
+            'title'             => __('Inner page banner'),
+            'description'       => __('inner page banner block.'),
+            'render_template'   => '/partials/inner-page-banner.php',
+            'category'          => 'formatting',
+            'icon'              => 'admin-comments',
+            'keywords'          => array( 'inner-page-banner', 'custom-block' ),
+        ));
+// register our-team block.
+        acf_register_block_type(array(
+            'name'              => 'our-team',
+            'title'             => __('Our team'),
+            'description'       => __('Our team block.'),
+            'render_template'   => '/partials/our-team.php',
+            'category'          => 'formatting',
+            'icon'              => 'admin-comments',
+            'keywords'          => array( 'our-team', 'custom-block' ),
+        ));
+// register about-summary block.
+        acf_register_block_type(array(
+            'name'              => 'about-summary',
+            'title'             => __('About summary'),
+            'description'       => __('About summary block.'),
+            'render_template'   => '/partials/about-summary.php',
+            'category'          => 'formatting',
+            'icon'              => 'admin-comments',
+            'keywords'          => array( 'about-summary', 'custom-block' ),
+        ));
 
     }
 }
