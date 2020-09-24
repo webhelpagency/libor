@@ -127,6 +127,46 @@ function my_acf_init_block_types() {
             'icon'              => 'admin-comments',
             'keywords'          => array( 'about-summary', 'custom-block' ),
         ));
+// register advantages-contact block.
+        acf_register_block_type(array(
+            'name'              => 'advantages-contact',
+            'title'             => __('Advantages contact'),
+            'description'       => __('Advantages contact block.'),
+            'render_template'   => '/partials/advantages-contact.php',
+            'category'          => 'formatting',
+            'icon'              => 'admin-comments',
+            'keywords'          => array( 'advantages-contact', 'custom-block' ),
+        ));
+// register advantages-services block.
+        acf_register_block_type(array(
+            'name'              => 'advantages-services',
+            'title'             => __('Advantages services'),
+            'description'       => __('Advantages services block.'),
+            'render_template'   => '/partials/advantages-services.php',
+            'category'          => 'formatting',
+            'icon'              => 'admin-comments',
+            'keywords'          => array( 'advantages-services', 'custom-block' ),
+        ));
+        // register our-project-black block.
+        acf_register_block_type(array(
+            'name'              => 'our-project-black',
+            'title'             => __('Our project black'),
+            'description'       => __('Our project black block.'),
+            'render_template'   => '/partials/our-projects-black.php',
+            'category'          => 'formatting',
+            'icon'              => 'admin-comments',
+            'keywords'          => array( 'our-project-black', 'custom-block' ),
+        ));
+        // register our-project-black block.
+        acf_register_block_type(array(
+            'name'              => 'experience-section',
+            'title'             => __('Experience section'),
+            'description'       => __('Experience section block.'),
+            'render_template'   => '/partials/experience-section.php',
+            'category'          => 'formatting',
+            'icon'              => 'admin-comments',
+            'keywords'          => array( 'experience-section', 'custom-block' ),
+        ));
 
     }
 }

@@ -2,18 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c54a9ba-b321-4c3c-880a-c9decdefe888" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/about.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partials/about-summary.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partials/inner-page-banner.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partials/our-team.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partials/slider-about.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/partials/advantages-contact.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/partials/advantages-services.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/partials/experience-section.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/partials/our-projects-black.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/partials/similar-projects.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single-services.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/about.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/css/child-theme-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/child-theme-style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/functions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/cpt.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/cpt.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inc/gutenberg-blocks-register.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/gutenberg-blocks-register.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/partials/modal/modal-homepage.php" beforeDir="false" afterPath="$PROJECT_DIR$/partials/modal/modal-homepage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/partials/modal/modal-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/partials/modal/modal-style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/partials/specialization.php" beforeDir="false" afterPath="$PROJECT_DIR$/partials/specialization.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/partials/call-us.php" beforeDir="false" afterPath="$PROJECT_DIR$/partials/call-us.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/partials/inner-page-banner.php" beforeDir="false" afterPath="$PROJECT_DIR$/partials/inner-page-banner.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/partials/our-services.php" beforeDir="false" afterPath="$PROJECT_DIR$/partials/our-services.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,9 +36,13 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/partials" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\libor\partials" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\libor\partials" />
       <recent name="E:\libor\partials\blocks" />
@@ -52,7 +58,9 @@
       <option name="presentableId" value="Default" />
       <updated>1600758824109</updated>
       <workItem from="1600758825260" duration="17643000" />
-      <workItem from="1600845205381" duration="19960000" />
+      <workItem from="1600845205381" duration="20176000" />
+      <workItem from="1600932852201" duration="614000" />
+      <workItem from="1600935566529" duration="20058000" />
     </task>
     <servers />
   </component>
@@ -69,9 +77,18 @@
     </state>
     <state x="-1188" y="92" width="1096" height="800" key="DirDiffDialog/0.0.1366.728/-1280.0.1280.984@-1280.0.1280.984" timestamp="1600765774346" />
     <state x="98" y="68" width="1170" height="592" key="DirDiffDialog/0.0.1366.728/-1280.0.1280.984@0.0.1366.728" timestamp="1600775946586" />
-    <state x="518" y="282" key="NewPhpFileDialog" timestamp="1600847684570">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="-795" y="381" key="NewPhpFileDialog" timestamp="1600956043415">
+      <screen x="-1280" y="0" width="1280" height="984" />
     </state>
+    <state x="-795" y="381" key="NewPhpFileDialog/0.0.1366.728/-1280.0.1280.984@-1280.0.1280.984" timestamp="1600956043415" />
     <state x="518" y="282" key="NewPhpFileDialog/0.0.1366.728/-1280.0.1280.984@0.0.1366.728" timestamp="1600847684570" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1600948523678">
+      <screen x="-1280" y="0" width="1280" height="984" />
+    </state>
+    <state width="498" height="446" key="SwitcherDM/0.0.1366.728/-1280.0.1280.984@-1280.0.1280.984" timestamp="1600948523678" />
+    <state x="-984" y="221" key="run.anything.popup" timestamp="1600958029506">
+      <screen x="-1280" y="0" width="1280" height="984" />
+    </state>
+    <state x="-984" y="221" key="run.anything.popup/0.0.1366.728/-1280.0.1280.984@-1280.0.1280.984" timestamp="1600958029506" />
   </component>
 </project>

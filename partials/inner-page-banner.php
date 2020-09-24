@@ -35,7 +35,13 @@ $inner_page_banner_bg = get_field("banner_background");
         <div class="mt-bnr-inr-entry">
             <div class="banner-title-outer">
                 <div class="banner-title-name">
-                    <h1 class="m-b0"><?php echo $inner_page_banner_title;?></h1>
+                    <h1 class="m-b0"><?php
+                        if (is_single()){
+                            the_title();
+                        }else{
+                        echo $inner_page_banner_title;
+                        }
+                        ?></h1>
                 </div>
             </div>
             <!-- BREADCRUMB ROW -->
