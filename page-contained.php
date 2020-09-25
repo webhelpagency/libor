@@ -1,4 +1,8 @@
 <?php
+/*
+ * Template Name: Page contained
+ */
+
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
@@ -7,26 +11,29 @@ get_header();
 $container = get_theme_mod( 'understrap_container_type' );
 
 ?>
-    <div class="page-content">
-        <?php get_template_part( 'partials/inner-page', 'banner' );?>
-        <div class="section-full p-tb80 inner-page-padding">
-            <div class="container">
-                <div class="project-detail-outer">
+
+    <div class="wrapper" id="page-wrapper">
+<?php  get_template_part( 'partials/inner-page', 'banner');?>
+        <div class="container" id="content" tabindex="-1">
+
+            <div class="row">
+
+                <main class="site-main" id="main">
 
                     <?php
                     while ( have_posts() ) {
                         the_post();
+                        get_template_part( 'partials/content', 'page' );
 
-                        the_content();
                     }
                     ?>
 
-                </div>
+                </main><!-- #main -->
 
             </div><!-- .row -->
 
         </div><!-- #content -->
-        <?php echo do_shortcode("[yarpp]")?>
+
     </div><!-- #page-wrapper -->
 
 <?php

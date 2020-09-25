@@ -70,3 +70,38 @@ div.image-effect-one .figcaption h4{
 .project-detail-outer{
     font-size:16px;
 }
+.similar-projects .owl-item img {
+    height: 300px;
+    background: #eee;
+}
+.similar-projects .understrap-read-more-link{
+    display: none;
+}
+.page_main_content{
+    margin-top:50px;
+}
+.google_map{
+    border: none;
+}
+.text-right .site-button {
+    padding: 0;
+}
+.site-button input {
+    background: none;
+    border: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    position: relative;
+    z-index: 22;
+    padding: 10px 15px;
+}
+a.contact-content{
+    color: #fff;
+    line-height: 24px;
+    font-size: 13px;
+}
+div.wpcf7 .ajax-loader{
+    position: absolute;
+    right:0;
+    top:30%;
+}

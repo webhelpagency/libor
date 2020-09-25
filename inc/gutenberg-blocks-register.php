@@ -167,6 +167,16 @@ function my_acf_init_block_types() {
             'icon'              => 'admin-comments',
             'keywords'          => array( 'experience-section', 'custom-block' ),
         ));
+        // register contact-section block.
+        acf_register_block_type(array(
+            'name'              => 'contact-section',
+            'title'             => __('Contact section'),
+            'description'       => __('Contact section block.'),
+            'render_template'   => '/partials/contact-section.php',
+            'category'          => 'formatting',
+            'icon'              => 'admin-comments',
+            'keywords'          => array( 'contact-section', 'custom-block' ),
+        ));
 
     }
 }
