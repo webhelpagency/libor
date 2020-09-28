@@ -28,8 +28,18 @@ $inner_page_banner_bg = get_field("banner_background");
 ?>
 
 <!-- INNER PAGE BANNER -->
+<?php
+    if(is_post_type_archive(['projects', 'services'])){ ?>
+<div class="mt-bnr-inr overlay-wraper bg-parallax bg-top-center"  data-stellar-background-ratio="0.5"
+     style="background-image:url(<?php echo get_field('archive_bg_url', 'option')?>);">
+    <?php
+    }
+    else{ ?>
 <div class="mt-bnr-inr overlay-wraper bg-parallax bg-top-center"  data-stellar-background-ratio="0.5"
      style="background-image:url(<?php echo $inner_page_banner_bg;?>);">
+  <?php  }
+;?>
+
     <div class="overlay-main bg-black opacity-07"></div>
     <div class="container">
         <div class="mt-bnr-inr-entry">
@@ -38,7 +48,14 @@ $inner_page_banner_bg = get_field("banner_background");
                     <h1 class="m-b0"><?php
                         if (is_single()){
                             the_title();
-                        }else{
+                        }
+                        elseif (is_post_type_archive('projects')){
+                            echo 'Наші проекти';
+                        }
+                        elseif (is_post_type_archive('services')){
+                            echo 'Наші послуги';
+                        }
+                        else{
                         echo $inner_page_banner_title;
                         }
                         ?></h1>

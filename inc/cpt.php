@@ -24,16 +24,43 @@ function init_new_custom_post_type(){
         'query_var'          => true,
         'rewrite'            => true,
         'capability_type'    => 'post',
+        'has_archive'        => false,
+        'hierarchical'       => false,
+        'menu_position'      => 23,
+        'show_in_rest' => true,
+        'supports'           => array('title','editor','author','thumbnail','excerpt','comments')
+    ) );
+    register_post_type('projects', array(
+        'labels'             => array(
+            'name'               => 'projects',
+            'singular_name'      => 'Project',
+            'add_new'            => 'Add new',
+            'add_new_item'       => 'Add new project',
+            'edit_item'          => 'Edit project',
+            'new_item'           => 'New project',
+            'view_item'          => 'View project',
+            'search_items'       => 'Search project',
+            'not_found'          =>  'Not found',
+            'not_found_in_trash' => 'Not found in trash',
+            'parent_item_colon'  => '',
+            'menu_name'          => 'Projects'
+
+        ),
+        'public'             => true,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'query_var'          => true,
+        'rewrite'            => true,
+        'capability_type'    => 'post',
         'has_archive'        => true,
         'hierarchical'       => false,
         'menu_position'      => 23,
         'show_in_rest' => true,
         'supports'           => array('title','editor','author','thumbnail','excerpt','comments')
     ) );
-}
-add_action('init', 'create_custom_taxonomy');
-function create_custom_taxonomy(){
-    register_taxonomy( 'taxonomy', [ 'services' ], [
+
+    register_taxonomy( 'tax_services', [ 'services' ], [
         'label'                 => '', // определяется параметром $labels->name
         'labels'                => [
             'name'              => 'service_types',
@@ -59,4 +86,32 @@ function create_custom_taxonomy(){
         'show_in_rest'          => null, // добавить в REST API
         'rest_base'             => null, // $taxonomy
     ] );
+    register_taxonomy( 'tax_projects', [ 'projects' ], [
+        'label'                 => '', // определяется параметром $labels->name
+        'labels'                => [
+            'name'              => 'project_types',
+            'singular_name'     => 'Project type',
+            'search_items'      => 'Search',
+            'all_items'         => 'All',
+            'view_item '        => 'View',
+            'parent_item'       => 'Parent',
+            'parent_item_colon' => 'Parent:',
+            'edit_item'         => 'Edit',
+            'update_item'       => 'Update',
+            'add_new_item'      => 'Add New',
+            'new_item_name'     => 'New project type Name',
+            'menu_name'         => 'Project types',
+        ],
+        'description'           => '',
+        'public'                => true,
+        'hierarchical'          => true,
+        'rewrite'               => true,
+        'capabilities'          => array(),
+        'meta_box_cb'           => null,
+        'show_admin_column'     => true,
+        'show_in_rest'          => null,
+        'rest_base'             => null,
+    ] );
 }
+
+

@@ -58,7 +58,7 @@ div.image-effect-one .figcaption h4{
         padding: 0;
     }
 }
-.mt-breadcrumb{
+.mt-breadcrumb, .mt-breadcrumb a{
     color:#fff;
 }
 .adv-services-content{
@@ -74,7 +74,8 @@ div.image-effect-one .figcaption h4{
     height: 300px;
     background: #eee;
 }
-.similar-projects .understrap-read-more-link{
+.blog a.understrap-read-more-link,
+.single a.understrap-read-more-link{
     display: none;
 }
 .page_main_content{
@@ -104,4 +105,43 @@ div.wpcf7 .ajax-loader{
     position: absolute;
     right:0;
     top:30%;
+}
+.archive .portfolio-wrap{
+    margin: 100px 15px;
+}
+.single h1{
+    font-size: 24px;
+    line-height: 30px;
+}
+.single .section-head{
+    margin-top: 50px;
+}
+.single .breadcrumb-style-2 li::after,
+.archive .breadcrumb-style-2 li::after{
+    display: none;
+}
+.pagination a, .pagination  span {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    color: #767676;
+    font-weight: 600;
+    font-size: 12px;
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    margin-left: -1px;
+    line-height: 1.42857143;
+    text-decoration: none;
+}
+.pagination a:hover,
+.pagination span:hover,
+.pagination a:focus,
+.pagination span:focus{
+    background-color: #F5BF23;
+    border-color: transparent;
+    color: #fff;
+    z-index:2;
+}
+.widget-post .sidebar-post-meta{
+    margin-bottom: 10px;
 }

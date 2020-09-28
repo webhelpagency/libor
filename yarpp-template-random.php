@@ -12,7 +12,15 @@ Author: YARPP Team
         <div class="section-head">
             <div class="mt-separator-outer separator-center">
                 <div class="mt-separator">
-                    <h2 class="text-white text-uppercase sep-line-one "><span class="font-weight-300 text-primary">Інші</span> послуги</h2>
+                    <h2 class="text-white text-uppercase sep-line-one ">
+                        <?php if(is_singular("projects")){
+                            echo '<span class="font-weight-300 text-primary">Інші</span> проекти</h2>';
+                        }elseif (is_singular("services")){
+                            echo '<span class="font-weight-300 text-primary">Інші</span> послуги</h2>';
+                        }else{
+                            echo '<span class="font-weight-300 text-primary">Інші</span> новини</h2>';
+                        }
+                        ?>
                 </div>
             </div>
         </div>

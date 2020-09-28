@@ -90,7 +90,22 @@ function the_breadcrumb(){
     } else { // не главная
 
         echo '<li><a href="' . site_url() . '">Головна</a></li>' . $separator;
-        if( is_single() ){ // записи
+
+        if(is_post_type_archive( 'projects' ) ) {
+            $p_url = get_post_type_archive_link('projects');?>
+            <li><a href="<?php echo $p_url;?>">Проекти</a></li>
+            <?php
+        }
+        elseif( is_singular( 'services') ) {
+            $p_url = get_permalink(109);?>
+            <li><a href="<?php echo $p_url;?>">Послуги</a></li>
+            <?php echo $separator; the_title();
+        }  elseif( is_singular( 'projects') ) {
+            $p_url = get_post_type_archive_link('projects');?>
+            <li><a href="<?php echo $p_url;?>">Проекти</a></li>
+            <?php echo $separator; the_title();
+        }
+        elseif( is_single() ){ // записи
 
             the_category(', '); echo $separator; the_title();
 
@@ -106,27 +121,6 @@ function the_breadcrumb(){
 
             single_tag_title();
 
-        } elseif ( is_day() ) { // архивы (по дням)
-
-            echo '<li><a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a></li>' . $separator;
-            echo '<li><a href="' . get_month_link(get_the_time('Y'),get_the_time('m')) . '">' . get_the_time('F') . '</a></li>' . $separator;
-            echo get_the_time('d');
-
-        } elseif ( is_month() ) { // архивы (по месяцам)
-
-            echo '<li><a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a></li>' . $separator;
-            echo get_the_time('F');
-
-        } elseif ( is_year() ) { // архивы (по годам)
-
-            echo get_the_time('Y');
-
-        } elseif ( is_author() ) { // архивы по авторам
-
-            global $author;
-            $userdata = get_userdata($author);
-            echo 'Опубліковано ' . $userdata->display_name;
-
         } elseif ( is_404() ) { // если страницы не существует
 
             echo 'Помилка 404';
@@ -135,14 +129,27 @@ function the_breadcrumb(){
         if ( $pageNum > 1 ) { // номер текущей страницы
             echo ' (' . $pageNum . '-а сторінка)';
         }
-//        if( is_tax( $taxonomy_name ) ) {
-//            single_term_title();
-//        }
-//
-//        if( is_singular( $post_type_name ) ) {
-//            the_title();
-//        }
     }
+}
+if( function_exists('acf_add_options_page') ) {
 
+    acf_add_options_page(array(
+        'page_title' 	=> 'Archive settings',
+        'menu_title'	=> 'Archive Settings',
+        'menu_slug' 	=> 'archive-settings',
+        'capability'	=> 'edit_posts',
+        'redirect'		=> false
+    ));
+
+}
+
+add_filter('navigation_markup_template', 'my_navigation_template', 10, 2 );
+function my_navigation_template( $template, $class ){
+
+    return '
+	<nav class="navigation %1$s" role="navigation">
+		<div class="m-tb0 nav-links">%3$s</div>
+	</nav>    
+	';
 }
 

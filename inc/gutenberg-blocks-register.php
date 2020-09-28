@@ -177,6 +177,16 @@ function my_acf_init_block_types() {
             'icon'              => 'admin-comments',
             'keywords'          => array( 'contact-section', 'custom-block' ),
         ));
+        // register all-projects block.
+        acf_register_block_type(array(
+            'name'              => 'all-projects',
+            'title'             => __('All projects'),
+            'description'       => __('All projects block.'),
+            'render_template'   => '/partials/all-projects.php',
+            'category'          => 'formatting',
+            'icon'              => 'admin-comments',
+            'keywords'          => array( 'all-projects', 'custom-block' ),
+        ));
 
     }
 }
