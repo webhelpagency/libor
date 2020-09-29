@@ -39,7 +39,8 @@ $service_link = get_sub_field('service_read_more');
             <div class="section-head m-b50">
                 <div class="mt-separator-outer separator-left">
                     <div class="mt-separator">
-                        <h2 class="text-uppercase sep-line-one ">
+                        <h2 data-aos="fade-right"
+                            data-aos-duration="500" class="text-uppercase sep-line-one ">
                             <span class="font-weight-300 text-primary">
                                 <?php echo get_field("services_section_title_yellow");?>
                             </span>
@@ -61,7 +62,8 @@ $service_link = get_sub_field('service_read_more');
                 while ($cpt_services->have_posts()) :
                 $cpt_services->the_post();
                 ?>
-                            <div class="col-md-3 col-sm-6 col-xs-6 col-xs-100pc bdr-l-1 bdr-solid bdr-gray">
+                            <div data-aos="fade-right"
+                                 data-aos-duration="500" class="col-md-3 col-sm-6 col-xs-6 col-xs-100pc bdr-l-1 bdr-solid bdr-gray">
                                 <div class="mt-icon-box-wraper ">
                                     <div class="relative  p-a30">
                                         <div class="icon-md inline-icon m-b15 text-primary scale-in-center">

@@ -8,10 +8,11 @@ function understrap_remove_scripts() {
 
     // Removes the parent themes stylesheet and scripts from inc/enqueue.php
 }
+
 add_action( 'wp_enqueue_scripts', 'understrap_remove_scripts', 20 );
 add_theme_support( 'custom-logo' );
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
-
+add_action( 'enqueue_block_editor_assets', 'theme_enqueue_styles' );
 
 include "inc/cpt.php";
 include "inc/footer-widgets-register.php";
@@ -32,6 +33,7 @@ function theme_enqueue_styles() {
     wp_enqueue_style( 'shapen-skin', get_stylesheet_directory_uri() . '/assets/css/skin/skin-1.css', array(), $the_theme->get( 'Version' ) );
     wp_enqueue_style( 'child-styles', get_stylesheet_directory_uri() . '/assets/css/child-theme-style.css', array(), $the_theme->get( 'Version' ) );
     wp_enqueue_style( 'child-styles-modal', get_stylesheet_directory_uri() . '/partials/modal/modal-style.css', array(), $the_theme->get( 'Version' ) );
+    wp_enqueue_style( 'child-styles-aos', get_stylesheet_directory_uri() . '/assets/css/aos/aos.css', array(), $the_theme->get( 'Version' ) );
     wp_deregister_script( 'jquery' );
     wp_register_script( 'jquery', get_stylesheet_directory_uri() . '/assets/js/jquery-1.12.4.min.js', array(), $the_theme->get( 'Version' ), true);
     wp_enqueue_script( 'jquery' );
@@ -52,6 +54,7 @@ function theme_enqueue_styles() {
     wp_enqueue_script( 'child-understrap-rev2', get_stylesheet_directory_uri() . '/assets/js/rev-script-2.js', array(), $the_theme->get( 'Version' ), true );
     wp_enqueue_script( 'child-understrap-extensions', get_stylesheet_directory_uri() . '/assets/revolution/revolution/js/extensions/revolution-plugin.js', array(), $the_theme->get( 'Version' ), true );
     wp_enqueue_script( 'child-modal-script', get_stylesheet_directory_uri() . '/partials/modal/modal-script.js', array(), $the_theme->get( 'Version' ), true );
+    wp_enqueue_script( 'child-aos-script', get_stylesheet_directory_uri() . '/assets/js/aos/aos.js', array(), $the_theme->get( 'Version' ), true );
 
     /*
 <!-- REVOLUTION JS FILES -->
@@ -59,17 +62,16 @@ function theme_enqueue_styles() {
 <script  src="plugins/revolution/revolution/js/extensions/revolution-plugin.js"></script>
      */
 }
-add_action( 'enqueue_block_editor_assets', 'theme_enqueue_styles' );
+
 add_image_size( 'custom-size-1920-1080', 1920, 1080, true );
 add_image_size( 'custom-size-800-400', 800, 400, true );
 add_image_size( 'custom-size-510-510', 510, 510, true );
+add_image_size( 'custom-size-360-400', 360, 400, true );
 add_theme_support('align-wide');
 add_action( 'after_setup_theme', 'theme_register_footer_menu' );
 function theme_register_footer_menu() {
     register_nav_menu( 'footer-menu', 'Footer menu' );
 }
-
-
 
 function the_breadcrumb(){
 
@@ -105,9 +107,16 @@ function the_breadcrumb(){
             <li><a href="<?php echo $p_url;?>">Проекти</a></li>
             <?php echo $separator; the_title();
         }
-        elseif( is_single() ){ // записи
+        elseif( is_home() ){ // записи
 
-            the_category(', '); echo $separator; the_title();
+           echo 'Останні новини';
+
+        }
+        elseif( is_single() ){ // записи ?>
+
+           <a href="<?php echo get_home_url(null, '/news');?>">Останні новини</a>
+          <?php  echo $separator;
+            the_title();
 
         } elseif ( is_page() ){ // страницы WordPress
 
@@ -152,4 +161,22 @@ function my_navigation_template( $template, $class ){
 	</nav>    
 	';
 }
+
+if ( ! function_exists( 'understrap_all_excerpts_get_more_link' ) ) {
+    function understrap_all_excerpts_get_more_link( $post_excerpt ) {
+        if ( ! is_admin() ) {
+            $post_excerpt = $post_excerpt . ' <p><a class="btn btn-secondary understrap-read-more-link" href="' . esc_url( get_permalink( get_the_ID() ) ) . '">' . __(
+                    'Read More...',
+                    'understrap'
+                ) . '</a></p>';
+        }
+        return $post_excerpt;
+    }
+}
+
+function my_theme_excerpt_more( $more ) {
+    return ' ';
+}
+add_filter( 'excerpt_more', 'my_theme_excerpt_more', 20 );
+
 

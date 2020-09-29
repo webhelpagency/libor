@@ -36,15 +36,14 @@ $contact_background = get_field("contact_background");
     <div class="overlay-main bg-black opacity-07"></div>
     <div class="container">
         <div class="section-content">
-            <div class="call-us-section text-center text-white">
+            <div data-aos="fade-right"
+                 data-aos-duration="500" class="call-us-section text-center text-white">
                 <h4 class="m-b15"><?php echo $contact_title;?></h4>
                 <h2 class="call-us-number m-b15 m-b0"><?php echo $contact_phone;?></h2>
                 <h4 class="call-us-address m-t0 m-b20"><?php echo $contact_adress;?></h4>
                 <div class="page-wrapper">
                     <a class="site-button btn-effect btn-modal trigger" href="#"><?php echo $contact_button['title']; ?></a>
                 </div>
-                <?php get_template_part('partials/modal/modal','homepage'); ?>
-<!--                modal close-->
             </div>
         </div>
 

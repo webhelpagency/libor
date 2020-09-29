@@ -36,22 +36,16 @@ if( !empty($block['align']) ) {
     <div class="masonry-item  col-lg-3 col-md-4 col-sm-6 m-b30">
         <div class="project-classic">
             <div class="mt-box ">
-                <div class="mt-thum-bx  img-center-icon  mt-img-overlay2">
+                <div data-aos="fade-right"
+                     data-aos-duration="500" class="mt-thum-bx  img-center-icon  mt-img-overlay2">
                     <img src="<?php the_post_thumbnail_url();?>" alt="">
-                    <div class="overlay-bx">
-                        <div class="overlay-icon">
-                            <a href="<?php the_permalink();?>">
-                                <i class="fa fa-external-link mt-icon-box-xs "></i>
-                            </a>
-                            <a class="mfp-link" href="<?php the_post_thumbnail_url();?>">
-                                <i class="fa fa-arrows-alt mt-icon-box-xs"></i>
-                            </a>
-                        </div>
-                    </div>
+                    <a href="<?php the_permalink();?>"><div class="overlay-bx">
+                    </div></a>
                 </div>
             </div>
-            <div class="mt-info p-t20">
-                <h4 class="mt-title m-b20 m-t0" data-hover="<?php the_title();?>"><?php the_title();?></h4>
+            <div data-aos="fade-right"
+                 data-aos-duration="500" class="mt-info p-t20">
+                <a href="<?php the_permalink();?>"> <h4 class="mt-title m-b20 m-t0" data-hover="<?php the_title();?>"><?php the_title();?></h4></a>
                 <p><?php the_excerpt();?></p>
                 <a href="<?php the_permalink();?>" class="site-button-link" data-hover="Read More">Детальніше<i class="fa fa-angle-right arrow-animation"></i></a>
             </div>

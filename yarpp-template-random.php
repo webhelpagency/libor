@@ -6,7 +6,8 @@ Author: YARPP Team
 */ ?>
 
 <!-- Similar projects START -->
-<div class="section-full p-t80 p-b30 bg-dark bg-repeat square_shape2 bg-moving" style="background-image:url(assets/images/bg-6.png)">
+<div data-aos="fade-up"
+     data-aos-duration="500" class="section-full p-t80 p-b30 bg-dark bg-repeat square_shape2 bg-moving" style="background-image:url(assets/images/bg-6.png)">
     <div class="container">
         <!-- TITLE START -->
         <div class="section-head">
@@ -26,7 +27,8 @@ Author: YARPP Team
         </div>
         <!-- TITLE END -->
     </div>
-    <div class="section-content container-fluid">
+    <div data-aos="fade-up"
+         data-aos-duration="500" class="section-content container-fluid">
 
         <div class="similar-carousel-outer">
             <div class="owl-carousel similar-projects owl-btn-vertical-center">

@@ -23,8 +23,8 @@ if( !empty($block['align']) ) {
 }
 
 // Load values and assign defaults.
-$inner_page_banner_title = get_field("banner_title");
-$inner_page_banner_bg = get_field("banner_background");
+$inner_page_banner_title = get_field("banner_title",get_queried_object_id());
+$inner_page_banner_bg = get_field("banner_background",get_queried_object_id());
 ?>
 
 <!-- INNER PAGE BANNER -->
@@ -44,7 +44,8 @@ $inner_page_banner_bg = get_field("banner_background");
     <div class="container">
         <div class="mt-bnr-inr-entry">
             <div class="banner-title-outer">
-                <div class="banner-title-name">
+                <div data-aos="fade-right"
+                     data-aos-duration="500" class="banner-title-name">
                     <h1 class="m-b0"><?php
                         if (is_single()){
                             the_title();

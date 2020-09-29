@@ -25,7 +25,8 @@ $container = get_theme_mod( 'understrap_container_type' );
                 <!-- OUR BLOG START -->
                 <div class="row">
                 <!-- TITLE START -->
-                <div class="section-head ">
+                <div data-aos="fade-up"
+                     data-aos-duration="500" class="section-head ">
                     <div class="mt-separator-outer separator-left">
                         <div class="mt-separator">
                             <h2 class="text-uppercase sep-line-one "><span class="font-weight-300 text-primary" >Останні</span> Новини</h2>
@@ -35,7 +36,8 @@ $container = get_theme_mod( 'understrap_container_type' );
                 <!-- TITLE END -->
 
                 <!-- IMAGE CAROUSEL START -->
-                <div class="section-content">
+                <div data-aos="fade-up"
+                     data-aos-duration="500" class="section-content">
                     <div class="row">
                         <?php
                         $args = array(
@@ -57,18 +59,7 @@ $container = get_theme_mod( 'understrap_container_type' );
                                             <a href="<?php the_permalink() ?>"><img src="<?php the_post_thumbnail_url();?>" alt=""></a>
                                         </div>
                                         <div class="mt-post-info p-a30 bg-gray">
-                                            <div class="post-overlay-position">
-                                                <div class="mt-post-meta ">
-                                                    <ul>
-                                                        <?php
-                                                        $day_date = get_the_date("d");
-                                                        $year_month_date = get_the_date("F-Y");
-                                                        ;?>
-                                                        <li class="post-date">
-                                                            <strong class="text-primary"><?php echo $day_date;?></strong>
-                                                            <span><?php echo $year_month_date;?></span></li>
-                                                    </ul>
-                                                </div>
+                                            <div class="post-overlay-position ">
                                                 <div class="mt-post-title ">
                                                     <h4 class="post-title m-b0"><?php the_title() ?></h4>
                                                 </div>

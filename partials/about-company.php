@@ -42,7 +42,8 @@ $about_us_description_button = get_field("about_us_description_button");
             <div class="section-head">
                 <div class="mt-separator-outer separator-left text-wh">
                     <div class="mt-separator">
-                        <h2 class="text-uppercase sep-line-one "><span class="font-weight-300 text-primary">
+                        <h2 data-aos="fade-right"
+                            data-aos-duration="500" class="text-uppercase sep-line-one "><span class="font-weight-300 text-primary">
                                 <?php echo $yellow_title;?>
                             </span>
                             <?php echo $black_title;?>
@@ -58,7 +59,8 @@ $about_us_description_button = get_field("about_us_description_button");
                     <div class="col-lg-8 col-md-12 col-sm-12">
                         <div class="about-us-image">
                             <!-- COLUMNS 1 -->
-                            <div class="item ">
+                            <div data-aos="fade-right"
+                                 data-aos-duration="500" class="item ">
                                 <div class="mt-img-effect zoom-slow">
                                     <img src="<?php echo $image_about_us['sizes']['custom-size-800-400'];?>" alt="Про ТОВ ЛИБОР">
                                 </div>
@@ -67,16 +69,13 @@ $about_us_description_button = get_field("about_us_description_button");
                     </div>
 
                     <div class="col-lg-4 col-md-12 col-sm-12">
-                        <div class="about-home-right about-right-v2 bg-primary text-black p-a30">
+                        <div data-aos="fade-right"
+                             data-aos-duration="500" class="about-home-right about-right-v2 bg-primary text-black p-a30">
                             <h3 class="m-t0"><span class="font-weight-100"><?php echo $about_us_description_title;?></h3>
                             <p><strong><?php echo $about_us_description_text;?></strong></p>
 
                             <div class="text-left">
                                 <a href="<?php echo $about_us_description_button;?>" class="site-button-secondry btn-effect">Детальніше</a>
-
-
-
-
                             </div>
                         </div>
                     </div>

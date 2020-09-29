@@ -8,7 +8,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 ?>
 <div class="wrapper" id="page-wrapper">
-
+<?php get_template_part( 'partials/inner-page', 'banner' );?>
     <div class="container-fluid" id="content" tabindex="-1">
 
         <div class="row">
@@ -25,26 +25,16 @@ $container = get_theme_mod( 'understrap_container_type' );
                     <?php if (have_posts()):?>
                     <?php while (have_posts()) : the_post(); ?>
                     <!-- COLUMNS 1 -->
-                    <div class="blog-post blog-lg date-style-3 block-shadow">
+                    <div data-aos="fade-up" data-aos-offset="0"
+                         data-aos-duration="500" class="blog-post blog-lg date-style-3 block-shadow">
 
                         <div class="mt-post-media mt-img-effect zoom-slow">
-                            <a href="javascript:void(0);"><img src="<?php the_post_thumbnail_url();?>" alt=""></a>
+                            <a href="<?php the_permalink();?>"><img src="<?php the_post_thumbnail_url();?>" alt=""></a>
                         </div>
                         <div class="mt-post-info p-a30 p-m30 bg-white">
 
                             <div class="mt-post-title ">
                                 <h4 class="post-title"><a href="<?php the_permalink();?>"><?php the_title();?></a></h4>
-                            </div>
-                            <div class="mt-post-meta ">
-                                <ul>
-                                    <li class="post-date"> <i class="fa fa-calendar text-primary"></i>
-                                        <?php
-                                        $day_month_date = get_the_date("d-F");
-                                        $year_date = get_the_date("Y");
-                                        ?>
-                                        <strong><?php echo $day_month_date;?></strong>
-                                        <span> <?php echo $year_date;?></span> </li>
-                                </ul>
                             </div>
                             <div class="mt-post-text">
                                 <p><?php the_excerpt();?></p>
@@ -71,7 +61,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 
                 <aside  class="side-bar">
                     <!-- RECENT POSTS -->
-                    <div class="widget bg-white  recent-posts-entry">
+                    <div data-aos="fade-up"
+                         data-aos-duration="500" class="widget bg-white  recent-posts-entry">
                         <h4 class="widget-title  ">Останні новини</h4>
                         <div class="section-content">
                             <div class="widget-post-bx">
@@ -90,15 +81,12 @@ $container = get_theme_mod( 'understrap_container_type' );
                                         ?>
                                         <div class="widget-post clearfix">
                                             <div class="mt-post-media">
-                                                <img src="<?php the_post_thumbnail_url();?>" alt="">
+                                                <a href="<?php the_permalink();?>">
+                                                    <img src="<?php the_post_thumbnail_url();?>" alt="">
+                                                </a>
+
                                             </div>
                                             <div class="mt-post-info">
-                                                <div class="mt-post-meta sidebar-post-meta">
-                                                    <ul>
-                                                        <?php $day_month_date = get_the_date("d-F");?>
-                                                        <li class="post-author"><?php echo $day_month_date;?></li>
-                                                    </ul>
-                                                </div>
                                                 <div class="mt-post-header">
                                                     <a href="<?php the_permalink();?>"><h6 class="post-title"><?php the_title();?></h6></a>
                                                 </div>
@@ -111,59 +99,31 @@ $container = get_theme_mod( 'understrap_container_type' );
                         </div>
                     </div>
 
-                    <!-- NEWSLETTER -->
-                    <div class="widget widget_newsletter-2 bg-white  ">
-                        <h4 class="widget-title  ">Newsletter</h4>
-                        <div class="newsletter-bx p-a30">
-                            <div class="newsletter-icon">
-                                <i class="fa fa-envelope-o"></i>
-                            </div>
-
-                            <div class="newsletter-content">
-                                <p>Subscribe to our mailing list to get the update to your email.</p>
-                            </div>
-                            <div class="m-t20">
-                                <form role="search" method="post">
-                                    <div class="input-group">
-                                        <input name="news-letter" class="form-control" placeholder="ENTER YOUR EMAIL" type="text">
-                                        <span class="input-group-btn">
-                                                            <button type="submit" class="site-button"><i class="fa fa-paper-plane-o"></i></button>
-                                                        </span>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-
                     <!-- OUR CLIENT -->
-                    <div class="widget">
-                        <h4 class="widget-title ">Our Client</h4>
+                    <div data-aos="fade-up"
+                         data-aos-duration="500" class="widget">
+                        <h4 class="widget-title "><?php echo get_field('sidebar_clients_title',get_queried_object_id());?></h4>
                         <div class="owl-carousel widget-client p-t10">
+                            <?php
+                            // Check rows exists.
+                            if( have_rows('sidebar_clients_repeater',get_queried_object_id()) ):
 
-                            <!-- COLUMNS 1 -->
-                            <div class="item">
-                                <div class="ow-client-logo">
-                                    <div class="client-logo">
-                                        <a href="#"><img src="images/client-logo/w1.png" alt=""></a>
+                                // Loop through rows.
+                                while( have_rows('sidebar_clients_repeater',get_queried_object_id()) ) : the_row(get_queried_object_id());
+                                    // Load sub field value.
+                                    $sidebar_client_image = get_sub_field('sidebar_client_image',get_queried_object_id());
+                                    $sidebar_client_link = get_sub_field('sidebar_client_link',get_queried_object_id());?>
+                                    <!-- COLUMNS  -->
+                                    <div class="item">
+                                        <div class="ow-client-logo">
+                                            <div class="client-logo">
+                                                <a href="<?php echo $sidebar_client_link;?>"><img src="<?php echo $sidebar_client_image;?>" alt=""></a>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                            <!-- COLUMNS 2 -->
-                            <div class="item">
-                                <div class="ow-client-logo">
-                                    <div class="client-logo">
-                                        <a href="#"><img src="images/client-logo/w2.png" alt=""></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- COLUMNS 3 -->
-                            <div class="item">
-                                <div class="ow-client-logo">
-                                    <div class="client-logo">
-                                        <a href="#"><img src="images/client-logo/w3.png" alt=""></a>
-                                    </div>
-                                </div>
-                            </div>
+                               <?php endwhile;
+                            endif;?>
+
 
                         </div>
                     </div>

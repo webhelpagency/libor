@@ -42,7 +42,7 @@ $link_target_second = $button_second['target'] ? $button_second['target'] : '_se
 <div id="welcome_wrapper" class="rev_slider_wrapper fullscreen-container" data-alias="goodnews-header">
     <div id="rev_slider_one" class="rev_slider fullwidthabanner" " data-version="5.4.3.1">
         <ul style="list-style: none">
-            <!-- SLIDE 1 -->
+
             <li data-index="rs-901"
                 data-transition="fade"
                 data-slotamount="default"
@@ -69,12 +69,12 @@ $link_target_second = $button_second['target'] ? $button_second['target'] : '_se
                 data-param9=""
                 data-param10=""
                 data-description="">
-                <!-- MAIN IMAGE -->
+<!--                 MAIN IMAGE -->
                 <img src="<?php echo $slider_welcome_img?>"
                      alt="<?php echo $slider_welcome_alt?>" class="rev-slidebg" data-bgfit="cover" data-bgparallax="10" data-bgposition="center center"
                      data-bgrepeat="no-repeat" data-no-retina=""/>
-                <!-- LAYERS -->
-                <!-- LAYER NR. 1 [ for overlay ] -->
+<!--                 LAYERS -->
+<!--                 LAYER NR. 1 [ for overlay ] -->
                 <div class="tp-caption tp-shape tp-shapewrapper "
                      id="slide-901-layer-0"
                      data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
@@ -100,7 +100,7 @@ $link_target_second = $button_second['target'] ? $button_second['target'] : '_se
                 </div>
 
 
-                <!-- LAYER NR. 4 [ for title ] -->
+<!--                 LAYER NR. 4 [ for title ] -->
                 <div class="tp-caption   tp-resizeme"
                      id="slide-901-layer-2"
                      data-x="['left','left','left','left']" data-hoffset="['50','130','130','130']"
@@ -129,8 +129,8 @@ $link_target_second = $button_second['target'] ? $button_second['target'] : '_se
 
                 </div>
 
-                <!-- LAYER NR. 5 [ for block] -->
-                <!-- LAYER NR. 5 [ for block] -->
+<!--                 LAYER NR. 5 [ for block] -->
+<!--                 LAYER NR. 5 [ for block] -->
                 <div class="tp-caption   tp-resizeme"
                      id="slide-901-layer-4"
                      data-x="['left','left','left','left']" data-hoffset="['50','130','130','130']"
@@ -158,7 +158,7 @@ $link_target_second = $button_second['target'] ? $button_second['target'] : '_se
                     <?php echo $slider_welcome_subtitle; ?>
                 </div>
 
-                <!-- LAYER NR. 5 [ for see all service botton ] -->
+<!--                 LAYER NR. 5 [ for see all service botton ] -->
                 <div class="tp-caption tp-resizeme"
                      id="slide-901-layer-5"
                      data-x="['left','left','left','left']" data-hoffset="['50','130','130','130']"
@@ -185,7 +185,7 @@ $link_target_second = $button_second['target'] ? $button_second['target'] : '_se
                 </div>
 
 
-                <!-- LAYER NR. 6 [ for see all service botton ] -->
+<!--                 LAYER NR. 6 [ for see all service botton ] -->
                 <div class="tp-caption tp-resizeme"
                      id="slide-901-layer-6"
                      data-x="['left','left','left','left']" data-hoffset="['260','330','330','330']"
@@ -215,14 +215,33 @@ $link_target_second = $button_second['target'] ? $button_second['target'] : '_se
             </li>
 
 
-            <!-- SLIDE 2 -->
-
-
-            <!-- SLIDE 3-->
+<!--             SLIDE 2 -->
+<!---->
+<!---->
+<!--             SLIDE 3-->
 
 
         </ul>
         <div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>
     </div>
 </div>
+
+<!--<div class="section-full p-t80 p-b50 bg-parallax bg-cover"  data-stellar-background-ratio="0.5"-->
+<!--     style="background-image:url(--><?php //echo $slider_welcome_img;?>/*);">*/
+/*    <div class="container">*/
+/*        <!-- TITLE START -->*/
+/*        <div class="section-head">*/
+/*            <div class="mt-separator-outer separator-center">*/
+/*                <div class="mt-separator text-white">*/
+/*                    <h2 data-aos="fade-right"*/
+/*                        data-aos-duration="500" class="text-uppercase sep-line-one ">*/
+/*                        */<?php //echo $slider_welcome_title;?><!--</h2>-->
+<!--                    <p>--><?php //echo $slider_welcome_subtitle;?><!--</p>-->
+<!--                    <a class="site-button btn-effect btn-modal trigger" href="--><?php //echo $link_url;?><!--">--><?php //echo $link_title; ?><!--</a>-->
+<!--                    <a class="site-button-secondry btn-effect btn-modal trigger" href="--><?php //echo $link_url_second;?><!--">--><?php //echo $link_title_second; ?><!--</a>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
 <!-- SLIDER END -->

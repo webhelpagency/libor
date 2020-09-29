@@ -21,7 +21,8 @@ $container = get_theme_mod( 'understrap_container_type' );
             <div class="row">
                 <!-- ABOUT COMPANY -->
                 <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="widget widget_about">
+                    <div data-aos="fade-up"
+                         data-aos-duration="500" class="widget widget_about">
                         <!--<h4 class="widget-title">About Company</h4>-->
                         <ul class="list-none">
                             <?php
@@ -35,7 +36,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 
                 <!-- RESENT POST -->
                 <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="widget widget_address_outer">
+                    <div data-aos="fade-up"
+                         data-aos-duration="500" class="widget widget_address_outer">
                         <h4 class="widget-title">Контакти</h4>
                         <ul class="widget_address">
                             <?php
@@ -49,7 +51,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 
                 <!-- USEFUL LINKS -->
                 <div class="col-lg-3 col-md-6 col-sm-6 footer-col-3">
-                    <div class="widget widget_services inline-links">
+                    <div data-aos="fade-up"
+                         data-aos-duration="500" class="widget widget_services inline-links">
                         <h4 class="widget-title">Меню</h4>
                         <?php
                         wp_nav_menu( array(
@@ -79,7 +82,8 @@ $container = get_theme_mod( 'understrap_container_type' );
                                 $year_published = get_the_date('Y');
                             ?>
                             <div class="bdr-light-blue widget-post clearfix  bdr-b-1 m-b10 p-b10">
-                                <div class="mt-post-date text-center text-uppercase text-white p-tb5">
+                                <div data-aos="fade-up"
+                                     data-aos-duration="500" class="mt-post-date text-center text-uppercase text-white p-tb5">
                                     <strong class="p-date"><?php echo $day_published;?></strong>
                                     <span class="p-month"><?php echo $month_published;?></span>
                                     <span class="p-year"><?php echo $year_published;?></span>
@@ -120,7 +124,9 @@ $container = get_theme_mod( 'understrap_container_type' );
 </footer>
 
 <?php wp_footer(); ?>
-
+<script>
+    AOS.init();
+</script>
 </body>
 
 </html>

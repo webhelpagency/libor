@@ -32,10 +32,11 @@ $about_summary_title_b = get_field("about_summary_title_b");
 <div class="section-full p-t80 p-b80 bg-dark bg-repeat square_shape2 inner-page-padding" style="background-image:url(<?php echo $about_summary_background;?>)">
     <div class="container">
         <!-- TITLE START -->
-        <div class="section-head">
+        <div  class="section-head">
             <div class="mt-separator-outer separator-left">
                 <div class="mt-separator text-white">
-                    <h2 class="text-uppercase sep-line-one ">
+                    <h2 data-aos="fade-right"
+                        data-aos-duration="500" class="text-uppercase sep-line-one ">
                         <span class="font-weight-300 text-primary"><?php echo $about_summary_title_y;?></span>
                         <?php echo $about_summary_title_b;?></h2>
                 </div>
@@ -55,7 +56,8 @@ $about_summary_title_b = get_field("about_summary_title_b");
                     $about_summary_date = get_sub_field('about_summary_date');
                     $about_summary_project = get_sub_field('about_summary_project');
                     $about_summary_content = get_sub_field('about_summary_content');?>
-                    <div class="row">
+                    <div data-aos="fade-right"
+                         data-aos-duration="500" class="row">
                         <div class="col-md-4 col-sm-6">
                             <div class="our-story-pic-block">
                                 <div class="mt-media our-story-pic">

@@ -32,7 +32,8 @@ $advantage_services_content = get_field("advantage_services_content");
 				<div class="container">
                     <!-- IMAGE CAROUSEL START -->
                     <div class="section-content">
-                        <div class="section-head m-b50 text-white text-center">
+                        <div data-aos="fade-right"
+                             data-aos-duration="500" class="section-head m-b50 text-white text-center">
                             <h3 class="m-t0"><?php echo $advantage_services_title;?></h3>
                             <p><?php echo $advantage_services_content;?></p>
                         </div>
@@ -48,7 +49,8 @@ $advantage_services_content = get_field("advantage_services_content");
                                     $advantage_service_content = get_sub_field('advantage_service_content');
                                     $advantage_service_link = get_sub_field('advantage_service_link');
                                     ?>
-                                    <div class="col-md-4 col-sm-6 m-b30">
+                                    <div data-aos="fade-right"
+                                         data-aos-duration="500" class="col-md-4 col-sm-6 m-b30">
 
                                         <div class="image-effect-one hover-shadow">
                                             <img src="<?php echo $advantage_service_img;?>" alt="" />

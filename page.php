@@ -20,7 +20,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 ?>
 
     <div class="wrapper" id="page-wrapper">
-
+        <?php get_template_part( 'partials/inner-page', 'banner' );?>
         <div class="container-fluid" id="content" tabindex="-1">
 
             <div class="row">

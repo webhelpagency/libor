@@ -36,7 +36,8 @@ $projects_title_black = get_field("projects_title_black");
         <div class="section-head">
             <div class="mt-separator-outer separator-center">
                 <div class="mt-separator">
-                    <h2 class="text-uppercase sep-line-one ">
+                    <h2 data-aos="fade-right"
+                        data-aos-duration="500" class="text-uppercase sep-line-one ">
                         <span class="font-weight-300 text-primary"><?php echo $projects_title_yellow;?></span>
                         <?php echo $projects_title_black;?>
                     </h2>
@@ -47,27 +48,25 @@ $projects_title_black = get_field("projects_title_black");
 
         <div class="section-content">
 
-            <div class="portfolio-wrap row mfp-gallery product-stamp clearfix">
+            <div class="portfolio-wrap class1111 row mfp-gallery product-stamp clearfix">
                 <!-- COLUMNS 1 -->
                 <?php
-                            if( have_rows('projects_repeater') ):
-
-                                while( have_rows('projects_repeater') ) : the_row();
-                                    $our_projects_title = get_sub_field('project_title');
-                                    $our_project_image = get_sub_field('project_image');
-                                    $our_projects_link = get_sub_field('project_link');
-                                    ?>
-                                    <div class="masonry-item col-md-4 col-sm-6 m-b30">
+                $our_projects = new WP_Query(['post_type'=>'projects', 'posts_per_page' => 6]);
+                while ($our_projects->have_posts()) :
+                $our_projects->the_post();
+                ?>
+                                    <div data-aos="fade-right"
+                                         data-aos-duration="500" class="masonry-item col-md-4 col-sm-6 m-b30">
                                         <div class="image-effect-one hover-shadow">
-                                            <img src="<?php echo $our_project_image['sizes']['custom-size-510-510']; ?>" alt="" />
+                                            <img src="<?php the_post_thumbnail_url('custom-size-510-510');?>" alt="" />
                                             <div class="figcaption">
-                                                <h4><?php echo $our_projects_title;?></h4>
-                                                <a href="#"><i class="link-plus bg-primary"></i></a>
+                                                <h4><?php the_title();?></h4>
+                                                <a href="<?php the_permalink();?>"><i class="link-plus bg-primary"></i></a>
                                             </div>
                                         </div>
                                     </div>
                                 <?php endwhile;
-                            endif;?>
+                wp_reset_postdata();?>
             </div>
         </div>
     </div>

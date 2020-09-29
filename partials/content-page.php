@@ -1,2 +1,4 @@
-<?php
-the_content();
+<?php;?>
+<div>
+    <?php the_content();?>
+</div>

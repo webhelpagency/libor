@@ -39,13 +39,15 @@ $advantage_contact_button = get_field("advantage_contact_button");
                 <div class="row">
                     <div class="col-md-5 col-sm-12">
                         <div class="service-about-left">
-                            <div class="mt-media">
+                            <div data-aos="fade-right"
+                                 data-aos-duration="500" class="mt-media">
                                 <img src="<?php echo $advantage_contact_image;?>" alt="">
                             </div>
                         </div>
                     </div>
                     <div class="col-md-7 col-sm-12">
-                        <div class="service-about-right m-b30">
+                        <div data-aos="fade-right"
+                             data-aos-duration="500" class="service-about-right m-b30">
                             <h3 class="m-t0"><?php echo $advantage_contact_heading;?></h3>
                             <p><?php echo $advantage_contact_content;?></p>
                             <div class="call-for-quote-outer">
@@ -57,8 +59,6 @@ $advantage_contact_button = get_field("advantage_contact_button");
                                     <div class="page-wrapper">
                                         <a class="site-button-secondry btn-effect btn-modal trigger" href="#"><?php echo $advantage_contact_button; ?></a>
                                     </div>
-                                    <?php get_template_part('partials/modal/modal','homepage'); ?>
-                                    <!--                modal close-->
                                 </div>
                             </div>
 

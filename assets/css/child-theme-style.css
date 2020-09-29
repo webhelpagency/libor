@@ -75,7 +75,8 @@ div.image-effect-one .figcaption h4{
     background: #eee;
 }
 .blog a.understrap-read-more-link,
-.single a.understrap-read-more-link{
+.single a.understrap-read-more-link,
+.archive a.understrap-read-more-link{
     display: none;
 }
 .page_main_content{

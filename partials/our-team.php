@@ -36,7 +36,8 @@ $our_team_black_title = get_field("our_team_black_title");
         <div class="section-head">
             <div class="mt-separator-outer separator-left">
                 <div class="mt-separator">
-                    <h2 class="text-uppercase sep-line-one ">
+                    <h2 data-aos="fade-right"
+                        data-aos-duration="500" class="text-uppercase sep-line-one ">
                         <span class="font-weight-300 text-primary"><?php echo $our_team_yellow_title;?></span>
                         <?php echo $our_team_black_title;?>
                     </h2>
@@ -59,7 +60,8 @@ $our_team_black_title = get_field("our_team_black_title");
                         $team_member_job = get_sub_field("team_member_job");
                         $team_member_name = get_sub_field("team_member_name");
                         ?>
-                        <div class="col-md-4 col-sm-6 col-xs-6 col-xs-100pc m-b30   ">
+                        <div data-aos="fade-right"
+                             data-aos-duration="500" class="col-md-4 col-sm-6 col-xs-6 col-xs-100pc m-b30   ">
 
                             <div class="our-team-1 hover-animation-1">
                                 <div class="profile-image scale-in-center"><img src="<?php echo $team_member_image;?>" alt="" /></div>

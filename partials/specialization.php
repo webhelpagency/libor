@@ -24,13 +24,15 @@ if( !empty($block['align']) ) {
 <!-- OUR SPECIALIZATION START -->
 <?php
 //checking page type
-if( is_front_page() ){
-    echo '<div class="section-full bg-white slider-half-part">';
-}
-else { ?>
-    <div class="section-full p-tb80 bg-white bg-repeat square_shape2 inner-page-padding" style="background-image:url(<?php echo get_field("specialization_bg") ;?>)">';
-<?php }
 ?>
+<div class="section-full bg-white slider-half-part">
+
+    <div class="section-full p-tb80 bg-white bg-repeat square_shape2 inner-page-padding" <?php if(is_front_page()){
+        echo '';
+    }else{ ?>
+         style="background-image:url(<?php echo get_field("specialization_bg") ;?>)"
+  <?php  }
+    ?>>
     <div class="container">
         <!-- IMAGE CAROUSEL START -->
         <div class="section-content">
@@ -45,7 +47,8 @@ else { ?>
                 ?>
                 <div class="col-md-4 col-sm-4 m-b30">
                     <div class="half-blocks">
-                        <div class="mt-icon-box-wraper center m-b30">
+                        <div data-aos="fade-right"
+                             data-aos-duration="500" class="mt-icon-box-wraper center m-b30">
                             <div class="half-block-content icon-count-2 p-a30 p-tb50">
                                 <span class="icon-count-number">   <?php echo $count_card;  ?></span>
                                 <div class="mt-icon-box-lg radius bg-gray m-b20 scale-in-center">
@@ -60,14 +63,13 @@ else { ?>
                                         <i class="fa fa-angle-right arrow-animation"></i></a>
                                 </div>
                             </div>
-                            <div class="bg-cover  half-blocks-bg" style="background-image:url(<?php echo $hover_image_card; ?>)"></div>
+                            <div class="bg-cover  half-blocks-bg" style="background-image:url(<?php echo $hover_image_card['sizes']['custom-size-360-400']; ?>)"></div>
                         </div>
                     </div>
 
                 </div>
                 <?php $count_card++;
                 endwhile; ?>
-
             </div>
             <?php endif; ?>
         </div>

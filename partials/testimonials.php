@@ -34,43 +34,42 @@ if( !empty($block['align']) ) {
             <div class="section-head">
                 <div class="mt-separator-outer separator-center">
                     <div class="mt-separator">
-                        <h2 class="text-white text-uppercase sep-line-one "><span class="font-weight-300 text-primary">ВІДГУКИ</span> КЛІЄНТІВ</h2>
+                        <h2 data-aos="fade-right"
+                            data-aos-duration="500" class="text-white text-uppercase sep-line-one "><span class="font-weight-300 text-primary">ВІДГУКИ</span> КЛІЄНТІВ</h2>
                     </div>
                 </div>
             </div>
             <!-- TITLE END -->
 
             <!-- TESTIMONIAL START -->
-            <div class="owl-carousel testimonial-home-2 p-b120">
+            <div data-aos="fade-right"
+                 data-aos-duration="500" class="owl-carousel testimonial-home-2 p-b120">
                 <?php
 
-                    // Check rows exists.
-                    if( have_rows('testimonoials_repeater') ):
+                $custom_testimonials = new WP_Query(['post_type'=>'testimonials', 'posts_per_page' => -1]);
+                while ($custom_testimonials->have_posts()) :
+                $custom_testimonials->the_post();
+                ?>
 
-                        while( have_rows('testimonoials_repeater') ) : the_row();
-                            $author_avatar = get_sub_field('author_avatar');
-                            $author_name = get_sub_field('author_name');
-                            $testimonial_content = get_sub_field('testimonial_content');
-                            ?>
                             <div class="item">
                                 <div class="col-sm-12 col-lg-offset-2 col-lg-8 col-md-offset-2 col-md-8">
                                     <div class="testimonial-1 testimonial-bg m-a30 hover-animation-1 text-center text-white">
                                         <div class="testimonial-detail clearfix">
-                                            <div class="testimonial-pic radius shadow scale-in-center"><img src="<?php echo $author_avatar; ?>" width="100" height="100" alt=""></div>
+                                            <div class="testimonial-pic radius shadow scale-in-center"><img src="<?php the_post_thumbnail_url();?>" width="100" height="100" alt=""></div>
                                         </div>
                                         <div class="testimonial-text">
                                             <span class="fa fa-quote-right"></span>
-                                            <p> <?php echo $testimonial_content; ?></p>
+                                            <p> <?php the_content(); ?></p>
                                         </div>
                                         <div class="testimonial-detail clearfix">
-                                            <h4 class="testimonial-name m-b5"><?php echo $author_name; ?></h4>
+                                            <h4 class="testimonial-name m-b5"><?php the_title(); ?></h4>
 
                                         </div>
                                     </div>
                                 </div>
                             </div>
                     <?php endwhile;
-                    endif;?>
+                    wp_reset_postdata();?>
             </div>
         </div>
     </div>

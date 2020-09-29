@@ -55,7 +55,8 @@ $experience_feature_3_value = get_field("experience_feature_3_value");
                             <div class="col-md-6">
                                 <div class="p-a30 bg-primary bg-bottom-right"
                                      style="background-image:url(<?php echo $experience_yellow_bg;?>);">
-                                    <div class="text-black">
+                                    <div data-aos="fade-right"
+                                         data-aos-duration="500" class="text-black">
                                         <h4 class="mt-tilte m-t0"><?php echo $experience_yellow_title;?></h4>
                                         <p><?php echo $experience_yellow_content;?></p>
                                         <a href="<?php echo $experience_yellow_button;?>"
@@ -65,7 +66,8 @@ $experience_feature_3_value = get_field("experience_feature_3_value");
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <div class="text-white p-r15">
+                                <div data-aos="fade-right"
+                                     data-aos-duration="500" class="text-white p-r15">
                                     <h4 class="mt-tilte"><?php echo $experience_black_title;?></h4>
                                     <p><?php echo $experience_black_content;?></p>
                                     <div class="page-wrapper">
@@ -78,7 +80,8 @@ $experience_feature_3_value = get_field("experience_feature_3_value");
                         </div>
                     </div>
                 </div>
-                <div class="col-md-5 col-sm-6 m-b30">
+                <div data-aos="fade-right"
+                     data-aos-duration="500" class="col-md-5 col-sm-6 m-b30">
                     <div class="our-exp">
                         <div class="mt-box">
                             <h3 class="m-t0 experience-main-heading">
@@ -108,8 +111,6 @@ $experience_feature_3_value = get_field("experience_feature_3_value");
                                 <span  class="popOver" data-toggle="tooltips" data-placement="top" title="<?php echo $experience_feature_3_value;?>%"></span>
                             </div>
                         </div>
-
-
                     </div>
                 </div>
             </div>

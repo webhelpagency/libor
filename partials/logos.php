@@ -34,7 +34,8 @@ if( !empty($block['align']) ) {
             <!-- TESTIMONIAL 4 START ON BACKGROUND -->
             <div class="section-content">
                 <div class="section-content p-tb10 owl-btn-vertical-center">
-                    <div class="owl-carousel home-client-carousel-2">
+                    <div data-aos="fade-right"
+                         data-aos-duration="500" class="owl-carousel home-client-carousel-2">
                     <?php
                         if( have_rows('logo_repeater') ):
 

@@ -43,7 +43,8 @@ $about_experience_button = get_field("about_experience_button");
         <div class="section-head">
             <div class="mt-separator-outer separator-left">
                 <div class="mt-separator">
-                    <h2 class="text-uppercase sep-line-one ">
+                    <h2 data-aos="fade-right"
+                        data-aos-duration="500" class="text-uppercase sep-line-one ">
                         <span class="font-weight-300 text-primary"><?php echo $about_section_yellow_title;?></span>
                         <?php echo $about_section_black_title;?></h2>
                 </div>
@@ -53,8 +54,9 @@ $about_experience_button = get_field("about_experience_button");
         <div class="section-content ">
             <div class="row">
                 <div class="col-md-5 col-sm-6">
-                    <div class="m-about ">
-                        <div class="owl-carousel about-us-carousel">
+                    <div data-aos="fade-right"
+                         data-aos-duration="500" class="m-about ">
+                        <div  class="owl-carousel about-us-carousel">
                             <?php
 
                             // Check rows exists.
@@ -98,7 +100,6 @@ $about_experience_button = get_field("about_experience_button");
                                 <a class="site-button btn-effect m-b15 btn-modal trigger" href="#">
                                     <?php echo$about_experience_button['title']; ?></a>
                             </div>
-                            <?php get_template_part('partials/modal','homepage'); ?>
                         </div>
                     </div>
                 </div>
