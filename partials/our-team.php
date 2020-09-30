@@ -51,7 +51,7 @@ $our_team_black_title = get_field("our_team_black_title");
             <div class="row">
                 <?php
                 if( have_rows('team_member_repeater') ):
-
+                $aos_delay = 0;
                     // Loop through rows.
                     while( have_rows('team_member_repeater') ) : the_row();
 
@@ -60,8 +60,8 @@ $our_team_black_title = get_field("our_team_black_title");
                         $team_member_job = get_sub_field("team_member_job");
                         $team_member_name = get_sub_field("team_member_name");
                         ?>
-                        <div data-aos="fade-right"
-                             data-aos-duration="500" class="col-md-4 col-sm-6 col-xs-6 col-xs-100pc m-b30   ">
+                        <div data-aos="fade-down"
+                             data-aos-duration="800" data-aos-delay="<?php echo $aos_delay;?>" class="col-md-4 col-sm-6 col-xs-6 col-xs-100pc m-b30   ">
 
                             <div class="our-team-1 hover-animation-1">
                                 <div class="profile-image scale-in-center"><img src="<?php echo $team_member_image;?>" alt="" /></div>
@@ -73,7 +73,9 @@ $our_team_black_title = get_field("our_team_black_title");
 
                             </div>
                         </div>
-                  <?php  endwhile;
+                  <?php
+                  $aos_delay+=200;
+                  endwhile;
 
                 endif;?>
 

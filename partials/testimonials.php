@@ -26,7 +26,7 @@ if( !empty($block['align']) ) {
 
 ?>
 <!-- TESTIMONIALS SECTION START -->
-<div class="section-full p-t80 bg-dark square_shape2  square_shape1 bg-moving" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/shapen/images/background/bg-6.png)">
+<div class="section-full p-t80 bg-dark square_shape2  square_shape1 bg-moving" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/assets/images/bg-6.png)">
     <div class="container">
         <div class="section-content">
 
@@ -34,16 +34,14 @@ if( !empty($block['align']) ) {
             <div class="section-head">
                 <div class="mt-separator-outer separator-center">
                     <div class="mt-separator">
-                        <h2 data-aos="fade-right"
-                            data-aos-duration="500" class="text-white text-uppercase sep-line-one "><span class="font-weight-300 text-primary">ВІДГУКИ</span> КЛІЄНТІВ</h2>
+                        <h2 class="text-white text-uppercase sep-line-one "><span class="font-weight-300 text-primary">ВІДГУКИ</span> КЛІЄНТІВ</h2>
                     </div>
                 </div>
             </div>
             <!-- TITLE END -->
 
             <!-- TESTIMONIAL START -->
-            <div data-aos="fade-right"
-                 data-aos-duration="500" class="owl-carousel testimonial-home-2 p-b120">
+            <div class="owl-carousel testimonial-home-2 p-b120">
                 <?php
 
                 $custom_testimonials = new WP_Query(['post_type'=>'testimonials', 'posts_per_page' => -1]);

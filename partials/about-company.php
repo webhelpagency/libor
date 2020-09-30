@@ -42,7 +42,7 @@ $about_us_description_button = get_field("about_us_description_button");
             <div class="section-head">
                 <div class="mt-separator-outer separator-left text-wh">
                     <div class="mt-separator">
-                        <h2 data-aos="fade-right"
+                        <h2 data-aos="fade-down"
                             data-aos-duration="500" class="text-uppercase sep-line-one "><span class="font-weight-300 text-primary">
                                 <?php echo $yellow_title;?>
                             </span>
@@ -59,8 +59,8 @@ $about_us_description_button = get_field("about_us_description_button");
                     <div class="col-lg-8 col-md-12 col-sm-12">
                         <div class="about-us-image">
                             <!-- COLUMNS 1 -->
-                            <div data-aos="fade-right"
-                                 data-aos-duration="500" class="item ">
+                            <div data-aos="fade-down"
+                                 data-aos-duration="500" data-aos-delay="150" class="item ">
                                 <div class="mt-img-effect zoom-slow">
                                     <img src="<?php echo $image_about_us['sizes']['custom-size-800-400'];?>" alt="Про ТОВ ЛИБОР">
                                 </div>
@@ -69,8 +69,8 @@ $about_us_description_button = get_field("about_us_description_button");
                     </div>
 
                     <div class="col-lg-4 col-md-12 col-sm-12">
-                        <div data-aos="fade-right"
-                             data-aos-duration="500" class="about-home-right about-right-v2 bg-primary text-black p-a30">
+                        <div data-aos="fade-down"
+                             data-aos-duration="500" data-aos-delay="300" class="about-home-right about-right-v2 bg-primary text-black p-a30">
                             <h3 class="m-t0"><span class="font-weight-100"><?php echo $about_us_description_title;?></h3>
                             <p><strong><?php echo $about_us_description_text;?></strong></p>
 
@@ -91,7 +91,7 @@ $about_us_description_button = get_field("about_us_description_button");
                     <?php
                     // Check rows exists.
                     if( have_rows('counter_repeater') ):
-
+                        $aos_delay = 0;
                         // Loop through rows.
                         while( have_rows('counter_repeater') ) : the_row();
                             $counter_icon = get_sub_field('counter_icon');
@@ -100,7 +100,8 @@ $about_us_description_button = get_field("about_us_description_button");
                             // Load sub field value.
                             ?>
                             <div class="col-md-3 col-sm-6">
-                                <div class="text-primary mt-icon-box-wraper left m-b30">
+                                <div data-aos="fade-down"
+                                     data-aos-duration="500" data-aos-delay="<?php echo $aos_delay;?>" class="text-primary mt-icon-box-wraper left m-b30">
                                         <span class="icon-md p-t10">
                                             <i class="<?php echo $counter_icon;?>"></i>
                                         </span>
@@ -111,6 +112,7 @@ $about_us_description_button = get_field("about_us_description_button");
                                 </div>
                             </div>
                         <?php
+                            $aos_delay+=100;
                         endwhile;
                     endif?>
                 </div>

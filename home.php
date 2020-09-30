@@ -26,7 +26,7 @@ $container = get_theme_mod( 'understrap_container_type' );
                     <?php while (have_posts()) : the_post(); ?>
                     <!-- COLUMNS 1 -->
                     <div data-aos="fade-up" data-aos-offset="0"
-                         data-aos-duration="500" class="blog-post blog-lg date-style-3 block-shadow">
+                         data-aos-duration="800" class="blog-post blog-lg date-style-3 block-shadow">
 
                         <div class="mt-post-media mt-img-effect zoom-slow">
                             <a href="<?php the_permalink();?>"><img src="<?php the_post_thumbnail_url();?>" alt=""></a>
@@ -61,8 +61,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 
                 <aside  class="side-bar">
                     <!-- RECENT POSTS -->
-                    <div data-aos="fade-up"
-                         data-aos-duration="500" class="widget bg-white  recent-posts-entry">
+                    <div data-aos="fade-down"
+                         data-aos-duration="800" data-aos-delay="500" class="widget bg-white  recent-posts-entry">
                         <h4 class="widget-title  ">Останні новини</h4>
                         <div class="section-content">
                             <div class="widget-post-bx">
@@ -101,7 +101,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
                     <!-- OUR CLIENT -->
                     <div data-aos="fade-up"
-                         data-aos-duration="500" class="widget">
+                         data-aos-duration="800" data-aos-delay="600" class="widget">
                         <h4 class="widget-title "><?php echo get_field('sidebar_clients_title',get_queried_object_id());?></h4>
                         <div class="owl-carousel widget-client p-t10">
                             <?php

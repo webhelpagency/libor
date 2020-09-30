@@ -6,8 +6,7 @@ Author: YARPP Team
 */ ?>
 
 <!-- Similar projects START -->
-<div data-aos="fade-up"
-     data-aos-duration="500" class="section-full p-t80 p-b30 bg-dark bg-repeat square_shape2 bg-moving" style="background-image:url(assets/images/bg-6.png)">
+<div class="section-full p-t80 p-b30 bg-dark bg-repeat square_shape2 bg-moving" style="background-image:url(assets/images/bg-6.png)">
     <div class="container">
         <!-- TITLE START -->
         <div class="section-head">
@@ -27,14 +26,16 @@ Author: YARPP Team
         </div>
         <!-- TITLE END -->
     </div>
-    <div data-aos="fade-up"
-         data-aos-duration="500" class="section-content container-fluid">
+    <div  class="section-content container-fluid">
 
         <div class="similar-carousel-outer">
             <div class="owl-carousel similar-projects owl-btn-vertical-center">
-                <?php if (have_posts()):?>
+                <?php if (have_posts()):
+                    $aos_delay = 0;
+                    ?>
                     <?php while (have_posts()) : the_post(); ?>
-                        <div class="item mt-box">
+                        <div data-aos="fade-down"
+                             data-aos-duration="800" data-aos-delay="<?php echo $aos_delay;?>" class="item mt-box">
                             <div class="mt-img-effect mt-img-overlay7">
                                 <img src="<?php the_post_thumbnail_url();?>" alt="">
                             </div>
@@ -44,7 +45,12 @@ Author: YARPP Team
                                 <a href="<?php the_permalink();?>" class="site-button btn-effect">Детальніше</a>
                             </div>
                         </div>
-                    <?php endwhile; ?>
+                    <?php
+                        $aos_delay+=200;
+                        if ($aos_delay > 600){
+                            $aos_delay = 0;
+                        }
+                    endwhile; ?>
                 <?php endif; ?>
 
             </div>

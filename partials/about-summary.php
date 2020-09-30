@@ -48,7 +48,8 @@ $about_summary_title_b = get_field("about_summary_title_b");
             <?php
 
             if( have_rows('about_summary_repeater') ):
-
+                $aos_counter = 1;
+                $data_aos = "fade-right";
                 while( have_rows('about_summary_repeater') ) : the_row();
 
                     $about_summary_image = get_sub_field('about_summary_image');
@@ -56,7 +57,7 @@ $about_summary_title_b = get_field("about_summary_title_b");
                     $about_summary_date = get_sub_field('about_summary_date');
                     $about_summary_project = get_sub_field('about_summary_project');
                     $about_summary_content = get_sub_field('about_summary_content');?>
-                    <div data-aos="fade-right"
+                    <div data-aos="<?php echo $data_aos;?>"
                          data-aos-duration="500" class="row">
                         <div class="col-md-4 col-sm-6">
                             <div class="our-story-pic-block">
@@ -73,7 +74,15 @@ $about_summary_title_b = get_field("about_summary_title_b");
                             </div>
                         </div>
                     </div>
-               <?php endwhile;
+               <?php
+                    $aos_counter+=1;
+                    if ($aos_counter % 2 === 0){
+                        $data_aos = "fade-left";
+                    }else{
+                        $data_aos = "fade-right";
+                    }
+                endwhile;
+
             endif;?>
 
         </div>

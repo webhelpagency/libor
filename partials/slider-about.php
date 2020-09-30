@@ -55,7 +55,7 @@ $about_experience_button = get_field("about_experience_button");
             <div class="row">
                 <div class="col-md-5 col-sm-6">
                     <div data-aos="fade-right"
-                         data-aos-duration="500" class="m-about ">
+                         data-aos-duration="800" class="m-about ">
                         <div  class="owl-carousel about-us-carousel">
                             <?php
 
@@ -79,7 +79,8 @@ $about_experience_button = get_field("about_experience_button");
                     </div>
                 </div>
                 <div class="col-md-7 col-sm-6">
-                    <div class="m-about-containt text-black p-t80">
+                    <div data-aos="fade-left"
+                         data-aos-duration="800" class="m-about-containt text-black p-t80">
                         <div class="m-about-years bg-moving" style="background-image:url(<?php echo $about_experience_bg;?>);">
                             <span class="text-primary large-title"><?php echo $about_experience_yellow_title;?></span>
                             <span class="large-title-info"><?php echo $about_experience_black_title;?></span>

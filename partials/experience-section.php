@@ -50,13 +50,13 @@ $experience_feature_3_value = get_field("experience_feature_3_value");
         <div class="section-content ">
             <div class="row">
                 <div class="col-md-7 col-sm-6  m-b30">
-                    <div class="brochur bg-dark p-a20">
+                    <div data-aos="fade-up"
+                         data-aos-duration="800"  class="brochur bg-dark p-a20">
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="p-a30 bg-primary bg-bottom-right"
                                      style="background-image:url(<?php echo $experience_yellow_bg;?>);">
-                                    <div data-aos="fade-right"
-                                         data-aos-duration="500" class="text-black">
+                                    <div class="text-black">
                                         <h4 class="mt-tilte m-t0"><?php echo $experience_yellow_title;?></h4>
                                         <p><?php echo $experience_yellow_content;?></p>
                                         <a href="<?php echo $experience_yellow_button;?>"
@@ -80,8 +80,8 @@ $experience_feature_3_value = get_field("experience_feature_3_value");
                         </div>
                     </div>
                 </div>
-                <div data-aos="fade-right"
-                     data-aos-duration="500" class="col-md-5 col-sm-6 m-b30">
+                <div data-aos="fade-down"
+                     data-aos-duration="800" class="col-md-5 col-sm-6 m-b30">
                     <div class="our-exp">
                         <div class="mt-box">
                             <h3 class="m-t0 experience-main-heading">

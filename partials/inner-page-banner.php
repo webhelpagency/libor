@@ -44,9 +44,9 @@ $inner_page_banner_bg = get_field("banner_background",get_queried_object_id());
     <div class="container">
         <div class="mt-bnr-inr-entry">
             <div class="banner-title-outer">
-                <div data-aos="fade-right"
-                     data-aos-duration="500" class="banner-title-name">
-                    <h1 class="m-b0"><?php
+                <div  class="banner-title-name">
+                    <h1 data-aos="fade-down"
+                        data-aos-duration="500" data-aos-delay="0" class="m-b0"><?php
                         if (is_single()){
                             the_title();
                         }

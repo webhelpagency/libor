@@ -34,21 +34,26 @@ if( !empty($block['align']) ) {
             <!-- TESTIMONIAL 4 START ON BACKGROUND -->
             <div class="section-content">
                 <div class="section-content p-tb10 owl-btn-vertical-center">
-                    <div data-aos="fade-right"
-                         data-aos-duration="500" class="owl-carousel home-client-carousel-2">
+                    <div class="owl-carousel home-client-carousel-2">
                     <?php
                         if( have_rows('logo_repeater') ):
-
+                            $aos_delay = 0;
                             while( have_rows('logo_repeater') ) : the_row();
                                 $logo_image = get_sub_field('logo_image');
                                 ?>
-                                <div class="item">
+                                <div data-aos="fade-up"
+                                     data-aos-duration="500" data-aos-delay="<?php echo $aos_delay;?>" class="item">
                                     <div class="ow-client-logo">
                                         <div class="client-logo client-logo-media">
                                             <a href="javascript:void(0);"><img src="<?php echo $logo_image; ?>" alt="logo"></a></div>
                                     </div>
                                 </div>
-                           <?php endwhile;
+                           <?php
+                                $aos_delay+=100;
+                                if ($aos_delay > 600){
+                                    $aos_delay = 0;
+                                }
+                            endwhile;
 
                         endif;?>
                     </div>

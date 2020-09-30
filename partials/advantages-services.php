@@ -41,7 +41,7 @@ $advantage_services_content = get_field("advantage_services_content");
                             <?php
 
                             if( have_rows('advantage_services_repeater') ):
-
+                                $aos_delay = 0;
                                 while( have_rows('advantage_services_repeater') ) : the_row();
 
                                     $advantage_service_img = get_sub_field('advantage_service_img');
@@ -49,8 +49,8 @@ $advantage_services_content = get_field("advantage_services_content");
                                     $advantage_service_content = get_sub_field('advantage_service_content');
                                     $advantage_service_link = get_sub_field('advantage_service_link');
                                     ?>
-                                    <div data-aos="fade-right"
-                                         data-aos-duration="500" class="col-md-4 col-sm-6 m-b30">
+                                    <div data-aos="fade-down"
+                                         data-aos-duration="500" data-aos-delay="<?php echo $aos_delay;?>" class="col-md-4 col-sm-6 m-b30">
 
                                         <div class="image-effect-one hover-shadow">
                                             <img src="<?php echo $advantage_service_img;?>" alt="" />
@@ -62,7 +62,9 @@ $advantage_services_content = get_field("advantage_services_content");
                                         </div>
 
                                     </div>
-                             <?php endwhile;
+                             <?php
+                                    $aos_delay+=200;
+                                endwhile;
                             endif;  ?>
 
                         </div>

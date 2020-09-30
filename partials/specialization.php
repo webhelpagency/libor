@@ -27,7 +27,7 @@ if( !empty($block['align']) ) {
 ?>
 <div class="section-full bg-white slider-half-part">
 
-    <div class="section-full p-tb80 bg-white bg-repeat square_shape2 inner-page-padding" <?php if(is_front_page()){
+    <div class="section-full w-100 p-tb80 bg-white bg-repeat square_shape2 inner-page-padding" <?php if(is_front_page()){
         echo '';
     }else{ ?>
          style="background-image:url(<?php echo get_field("specialization_bg") ;?>)"
@@ -38,7 +38,9 @@ if( !empty($block['align']) ) {
         <div class="section-content">
             <?php if( have_rows('specialization_repeater') ):  $count_card=1;?>
             <div class="row">
-                <?php while( have_rows('specialization_repeater') ): the_row();
+                <?php
+                $aos_delay = 0;
+                while( have_rows('specialization_repeater') ): the_row();
                     $title_card = get_sub_field('title_card');
                     $icon_card = get_sub_field('icon_card');
                     $description_card = get_sub_field('description_card');
@@ -47,15 +49,15 @@ if( !empty($block['align']) ) {
                 ?>
                 <div class="col-md-4 col-sm-4 m-b30">
                     <div class="half-blocks">
-                        <div data-aos="fade-right"
-                             data-aos-duration="500" class="mt-icon-box-wraper center m-b30">
+                        <div data-aos="fade-up"
+                             data-aos-duration="500" data-aos-delay="<?php echo $aos_delay;?>"  class="mt-icon-box-wraper center m-b30">
                             <div class="half-block-content icon-count-2 p-a30 p-tb50">
                                 <span class="icon-count-number">   <?php echo $count_card;  ?></span>
                                 <div class="mt-icon-box-lg radius bg-gray m-b20 scale-in-center">
                                     <span class="icon-cell"><img src="<?php echo $icon_card['url']; ?>" alt="<?php echo $icon_card['alt'] ?>"></span>
                                 </div>
                                 <div class="icon-content">
-                                    <h4 class="mt-tilte m-b25"><?php echo $title_card; ?></h4>
+                                    <a href="<?php echo esc_url( $link_card['url'] ); ?>"><h4 class="mt-tilte m-b25"><?php echo $title_card; ?></h4></a>
                                     <?php echo $description_card; ?>
                                     <a  href="<?php echo esc_url( $link_card['url'] ); ?>" target="<?php echo esc_attr( $link_card['target'] ? $link_card['target'] : '_self' ); ?>"
                                         class="site-button-link" data-hover="<?php echo esc_html( $link_card['title'] ); ?>">
@@ -69,6 +71,7 @@ if( !empty($block['align']) ) {
 
                 </div>
                 <?php $count_card++;
+                    $aos_delay+=200;
                 endwhile; ?>
             </div>
             <?php endif; ?>

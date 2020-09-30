@@ -59,18 +59,19 @@ $service_link = get_sub_field('service_read_more');
                 }else{
                     $cpt_services = new WP_Query(['post_type'=>'services', 'posts_per_page' => -1]);
                 }
+                $aos_delay = 0;
                 while ($cpt_services->have_posts()) :
                 $cpt_services->the_post();
                 ?>
-                            <div data-aos="fade-right"
-                                 data-aos-duration="500" class="col-md-3 col-sm-6 col-xs-6 col-xs-100pc bdr-l-1 bdr-solid bdr-gray">
+                            <div data-aos="fade-down"
+                                 data-aos-duration="500" data-aos-delay="<?php echo $aos_delay;?>" data-aos-anchor-placement="center-center" class="col-md-3 col-sm-6 col-xs-6 col-xs-100pc bdr-l-1 bdr-solid bdr-gray">
                                 <div class="mt-icon-box-wraper ">
                                     <div class="relative  p-a30">
                                         <div class="icon-md inline-icon m-b15 text-primary scale-in-center">
                                             <span class="icon-cell"><img src="<?php the_post_thumbnail_url();?>" alt=""></span>
                                         </div>
                                         <div class="icon-content">
-                                            <h4 class="mt-tilte m-b25"><?php the_title();?></h4>
+                                            <a href="<?php the_permalink();?>"><h4 class="mt-tilte m-b25"><?php the_title();?></h4></a>
                                         </div>
                                         <a href="<?php the_permalink();?>" class="site-button-link services-button-link" data-hover="Read More">Детальніше
                                             <i class="fa fa-angle-right arrow-animation"></i>
@@ -78,7 +79,12 @@ $service_link = get_sub_field('service_read_more');
                                     </div>
                                 </div>
                             </div>
-                       <?php endwhile;
+                <?php
+                    $aos_delay+=100;
+                    if ($aos_delay > 300){
+                        $aos_delay = 0;
+                    }
+                endwhile;
                        wp_reset_postdata() ;?>
             </div>
         </div>

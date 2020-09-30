@@ -12,6 +12,7 @@ function understrap_remove_scripts() {
 add_action( 'wp_enqueue_scripts', 'understrap_remove_scripts', 20 );
 add_theme_support( 'custom-logo' );
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
+add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles_frontend_only' );
 add_action( 'enqueue_block_editor_assets', 'theme_enqueue_styles' );
 
 include "inc/cpt.php";
@@ -33,11 +34,10 @@ function theme_enqueue_styles() {
     wp_enqueue_style( 'shapen-skin', get_stylesheet_directory_uri() . '/assets/css/skin/skin-1.css', array(), $the_theme->get( 'Version' ) );
     wp_enqueue_style( 'child-styles', get_stylesheet_directory_uri() . '/assets/css/child-theme-style.css', array(), $the_theme->get( 'Version' ) );
     wp_enqueue_style( 'child-styles-modal', get_stylesheet_directory_uri() . '/partials/modal/modal-style.css', array(), $the_theme->get( 'Version' ) );
-    wp_enqueue_style( 'child-styles-aos', get_stylesheet_directory_uri() . '/assets/css/aos/aos.css', array(), $the_theme->get( 'Version' ) );
     wp_deregister_script( 'jquery' );
-    wp_register_script( 'jquery', get_stylesheet_directory_uri() . '/assets/js/jquery-1.12.4.min.js', array(), $the_theme->get( 'Version' ), true);
+    wp_register_script( 'jquery', get_stylesheet_directory_uri() . '/assets/js/jquery-1.12.4.min.js', array(), $the_theme->get( 'Version' ), false);
     wp_enqueue_script( 'jquery' );
-    wp_enqueue_script( 'child-understrap-bootstrap', get_stylesheet_directory_uri() . '/assets/js/bootstrap.min.js', array(), $the_theme->get( 'Version' ), true );
+    wp_enqueue_script( 'child-understrap-bootstrap', get_stylesheet_directory_uri() . '/assets/js/bootstrap.min.js', array(), $the_theme->get( 'Version' ), false );
     wp_enqueue_script( 'child-understrap-popup', get_stylesheet_directory_uri() . '/assets/js/magnific-popup.min.js', array(), $the_theme->get( 'Version' ), true );
     wp_enqueue_script( 'child-understrap-waypoints', get_stylesheet_directory_uri() . '/assets/js/waypoints.min.js', array(), $the_theme->get( 'Version' ), true );
     wp_enqueue_script( 'child-understrap-counterup', get_stylesheet_directory_uri() . '/assets/js/counterup.min.js', array(), $the_theme->get( 'Version' ), true );
@@ -54,13 +54,12 @@ function theme_enqueue_styles() {
     wp_enqueue_script( 'child-understrap-rev2', get_stylesheet_directory_uri() . '/assets/js/rev-script-2.js', array(), $the_theme->get( 'Version' ), true );
     wp_enqueue_script( 'child-understrap-extensions', get_stylesheet_directory_uri() . '/assets/revolution/revolution/js/extensions/revolution-plugin.js', array(), $the_theme->get( 'Version' ), true );
     wp_enqueue_script( 'child-modal-script', get_stylesheet_directory_uri() . '/partials/modal/modal-script.js', array(), $the_theme->get( 'Version' ), true );
+}
+function theme_enqueue_styles_frontend_only()
+{
+    $the_theme = wp_get_theme();
+    wp_enqueue_style( 'child-styles-aos', get_stylesheet_directory_uri() . '/assets/css/aos/aos.css', array(), $the_theme->get( 'Version' ) );
     wp_enqueue_script( 'child-aos-script', get_stylesheet_directory_uri() . '/assets/js/aos/aos.js', array(), $the_theme->get( 'Version' ), true );
-
-    /*
-<!-- REVOLUTION JS FILES -->
-<!-- SLIDER REVOLUTION 5.0 EXTENSIONS  (Load Extensions only on Local File Systems !  The following part can be removed on Server for On Demand Loading) -->
-<script  src="plugins/revolution/revolution/js/extensions/revolution-plugin.js"></script>
-     */
 }
 
 add_image_size( 'custom-size-1920-1080', 1920, 1080, true );

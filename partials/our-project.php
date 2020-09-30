@@ -51,12 +51,14 @@ $projects_title_black = get_field("projects_title_black");
             <div class="portfolio-wrap class1111 row mfp-gallery product-stamp clearfix">
                 <!-- COLUMNS 1 -->
                 <?php
+                $aos_delay = 0;
                 $our_projects = new WP_Query(['post_type'=>'projects', 'posts_per_page' => 6]);
                 while ($our_projects->have_posts()) :
                 $our_projects->the_post();
+
                 ?>
-                                    <div data-aos="fade-right"
-                                         data-aos-duration="500" class="masonry-item col-md-4 col-sm-6 m-b30">
+                                    <div data-aos="fade-up"
+                                         data-aos-duration="500" data-aos-delay="<?php echo $aos_delay;?>" class="masonry-item col-md-4 col-sm-6 m-b30">
                                         <div class="image-effect-one hover-shadow">
                                             <img src="<?php the_post_thumbnail_url('custom-size-510-510');?>" alt="" />
                                             <div class="figcaption">
@@ -65,7 +67,12 @@ $projects_title_black = get_field("projects_title_black");
                                             </div>
                                         </div>
                                     </div>
-                                <?php endwhile;
+                                <?php
+                    $aos_delay+=300;
+                    if ($aos_delay > 600){
+                        $aos_delay = 0;
+                    }
+                endwhile;
                 wp_reset_postdata();?>
             </div>
         </div>

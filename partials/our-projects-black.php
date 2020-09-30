@@ -35,7 +35,7 @@ $black_projects_title_b = get_field("black_projects_title_b");
         <div class="section-head">
             <div class="mt-separator-outer separator-center">
                 <div class="mt-separator text-white">
-                    <h2 data-aos="fade-right"
+                    <h2 data-aos="fade-up"
                         data-aos-duration="500" class="text-uppercase sep-line-one ">
                         <span class="font-weight-300 text-primary"><?php echo $black_projects_title_y;?></span>
                         <?php echo $black_projects_title_b;?></h2>
@@ -46,14 +46,14 @@ $black_projects_title_b = get_field("black_projects_title_b");
         <!-- GALLERY CONTENT START -->
         <div class="portfolio-wrap mfp-gallery work-grid row clearfix">
             <?php
-
+            $aos_delay = 0;
             $black_projects = new WP_Query(['post_type'=>'projects', 'posts_per_page' => 8]);
             while ($black_projects->have_posts()) :
             $black_projects->the_post();
             ?>
             <!-- COLUMNS -->
-            <div data-aos="fade-right"
-                 data-aos-duration="500" class="masonry-item col-md-3 col-sm-6 m-b30">
+            <div data-aos="fade-down"
+                 data-aos-duration="800" data-aos-delay="<?php echo $aos_delay;?>" class="masonry-item col-md-3 col-sm-6 m-b30">
                 <div class="mt-box   image-hover-block">
                     <div class="mt-thum-bx">
                         <img src="<?php the_post_thumbnail_url();?>" alt="">
@@ -65,7 +65,12 @@ $black_projects_title_b = get_field("black_projects_title_b");
                     <a href="<?php the_permalink();?>"></a>
                 </div>
             </div>
-                <?php  endwhile;
+                <?php
+                $aos_delay+=150;
+                if ($aos_delay > 450){
+                    $aos_delay = 0;
+                }
+            endwhile;
             wp_reset_postdata(); ?>
         </div>
         <!-- GALLERY CONTENT END -->

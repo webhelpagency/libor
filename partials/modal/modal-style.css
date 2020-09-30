@@ -88,11 +88,13 @@ div.form-button-send{
     margin: auto;
 }
 .good-job .your-name .wpcf7-text,
-.good-job .tel-224 .wpcf7-text{
+.good-job .tel-224 .wpcf7-text,
+.good-job .textarea-747 .wpcf7-textarea{
     background-color: #ffffff;
-    color: #fff;
+    color: #1f1f1f;
     padding: 10px;
     border: 1px solid #d3d3d3;
+    width: 100%;
 }
 .good-job h2 {
     font-size: 24px;

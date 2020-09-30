@@ -27,31 +27,35 @@ if( !empty($block['align']) ) {
 ?>
 <div class="portfolio-wrap mfp-gallery work-grid row clearfix">
     <?php
-
+    $aos_delay = 0;
         $all_projects = new WP_Query(['post_type'=>'projects', 'posts_per_page' => -1]);
         while ($all_projects->have_posts()) :
         $all_projects->the_post();
     ?>
     <!-- COLUMNS -->
-    <div class="masonry-item  col-lg-3 col-md-4 col-sm-6 m-b30">
+    <div data-aos="fade-down"
+         data-aos-duration="800" data-aos-delay="<?php echo $aos_delay;?>" class="masonry-item  col-lg-3 col-md-4 col-sm-6 m-b30">
         <div class="project-classic">
             <div class="mt-box ">
-                <div data-aos="fade-right"
-                     data-aos-duration="500" class="mt-thum-bx  img-center-icon  mt-img-overlay2">
+                <div  class="mt-thum-bx  img-center-icon  mt-img-overlay2">
                     <img src="<?php the_post_thumbnail_url();?>" alt="">
                     <a href="<?php the_permalink();?>"><div class="overlay-bx">
                     </div></a>
                 </div>
             </div>
-            <div data-aos="fade-right"
-                 data-aos-duration="500" class="mt-info p-t20">
+            <div class="mt-info p-t20">
                 <a href="<?php the_permalink();?>"> <h4 class="mt-title m-b20 m-t0" data-hover="<?php the_title();?>"><?php the_title();?></h4></a>
                 <p><?php the_excerpt();?></p>
                 <a href="<?php the_permalink();?>" class="site-button-link" data-hover="Read More">Детальніше<i class="fa fa-angle-right arrow-animation"></i></a>
             </div>
         </div>
     </div>
-<?php endwhile;
+<?php
+            $aos_delay+=250;
+            if ($aos_delay > 750){
+                $aos_delay = 0;
+            }
+        endwhile;
     wp_reset_postdata();
 ?>
 </div>
